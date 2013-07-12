@@ -192,7 +192,7 @@ public class MtpService extends Service {
                 int storageId = MtpStorage.getStorageId(i);
                 long reserveSpace = volume.getMtpReserveSpace() * 1024 * 1024;
 
-                MtpStorage storage = new MtpStorage(volume);
+                MtpStorage storage = new MtpStorage(volume, getApplicationContext());
                 mStorageMap.put(path, storage);
                 if (!mMtpDisabled) {
                     // In PTP mode we support only primary storage
